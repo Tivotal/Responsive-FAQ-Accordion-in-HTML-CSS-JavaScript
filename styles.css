@@ -1,0 +1,170 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #4070f4;
+  color: #fff;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #4070f4;
+}
+
+.accordion {
+  max-width: 1010px;
+  width: 100%;
+  background: #fff;
+  padding: 45px 90px 45px 60px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion .image-box {
+  height: 360px;
+  width: 300px;
+}
+
+.accordion .image-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.accordion .accordion-content {
+  width: 60%;
+}
+
+.accordion .accordion-content .title {
+  font-size: 35px;
+  color: #4070f4;
+  font-weight: 600;
+}
+
+.accordion .accordion-content .faq-content {
+  margin-top: 25px;
+  height: 263px;
+  overflow-y: auto;
+}
+
+.accordion .accordion-content .faq-content::-webkit-scrollbar {
+  display: none;
+}
+
+.accordion .accordion-content .faq-content li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.accordion .accordion-content .faq-content li .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion .accordion-content .faq-content li .header .question {
+  font-size: 18px;
+  font-weight: 500;
+  color: #595959;
+  transition: all 0.3s ease;
+}
+
+.accordion .accordion-content .faq-content li .header .arrow {
+  font-size: 20px;
+  color: #595959;
+  transition: 0.3s ease;
+}
+
+.accordion .accordion-content .faq-content li.active .header .arrow {
+  transform: rotate(-180deg);
+}
+
+.accordion .accordion-content .faq-content li.active .header .arrow,
+.accordion .accordion-content .faq-content li.active .header .question,
+.accordion .accordion-content .faq-content li:hover .header .question,
+.accordion .accordion-content .faq-content li:hover .header .arrow {
+  color: #4070f4;
+}
+
+.accordion .accordion-content .faq-content li p {
+  font-size: 15px;
+  color: #595959;
+  font-weight: 500;
+  display: none;
+}
+
+.accordion .accordion-content .faq-content li.active p {
+  display: block;
+}
+
+.accordion .accordion-content .faq-content li .line {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+}
+
+@media (max-width: 994px) {
+  body {
+    padding: 40px 20px;
+  }
+
+  .accordion {
+    max-width: 100%;
+    padding: 45px 60px 45px 60px;
+  }
+
+  .accordion .image-box {
+    height: 360px;
+    width: 220px;
+  }
+
+  .accordion .accordion-content {
+    width: 63%;
+  }
+}
+
+@media (max-width: 820px) {
+  .accordion {
+    flex-direction: column;
+  }
+
+  .accordion .image-box {
+    width: 100%;
+    height: 360px;
+    background-color: #4070f4;
+    padding: 30px;
+    border-radius: 25px;
+  }
+
+  .accordion .accordion-content {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 538px) {
+  .accordion {
+    padding: 25px;
+  }
+
+  .accordion .accordion-content li p {
+    width: 98%;
+  }
+}
